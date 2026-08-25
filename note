@@ -36,7 +36,7 @@ cmd_list() {
     printf '%s\t%s\n' "$hash" "$(cat "$file")"
   done
 }
-
+END_COMMENT
 cmd_delete() {
   if [[ $# -eq 0 ]]; then
     echo "error: hash required" >&2
