@@ -11,7 +11,7 @@ usage() {
 hash_content() {
   printf '%s' "$1" | shasum -a 256 | awk '{print $1}'
 }
-:<<'END_COMMENT'
+
 cmd_add() {
   if [[ $# -eq 0 ]]; then
     echo "error: note text required" >&2
@@ -24,7 +24,7 @@ cmd_add() {
   printf '%s' "$text" >"$NOTES_DIR/$hash"
   echo "$hash"
 }
-
+:<<'END_COMMENT'
 cmd_list() {
   if [[ ! -d "$NOTES_DIR" ]]; then
     return 0
